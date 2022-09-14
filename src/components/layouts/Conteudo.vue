@@ -1,16 +1,14 @@
 <template>
   <div>
-    <h1>Componente Conteudo</h1>
-    <p>Conteudo - Propriedade $style {{$style}}</p>
-    <div :class="$style['teste-1']">Class teste-1</div>
-    <div :id="$style['teste-2']">ID teste-2</div>
+    <h1>{{titulo}}</h1>
+    <button @click="atualizarComponente()">Atualizar</button>
     <home></home>
     <publicar-vaga></publicar-vaga>
   </div>
 </template>
   
 <script>
-import Home from "../views/Home.vue";
+import Home from "@/components/views/Home.vue";
 import PublicarVaga from "../views/PublicarVaga.vue";
 export default {
   name: "Conteudo",
@@ -18,6 +16,56 @@ export default {
     Home,
     PublicarVaga,
   },
+  data: () => ({
+    teste: 'O componente foi criado',
+    titulo: 'Componente Conteudo',
+  }),
+  methods: {
+    atualizarComponente() {
+      this.titulo += '*';
+    }
+  },
+  beforeCreate() {
+    console.log('Antes de Criar - ', this.teste)
+  },
+  created() {
+    console.log('Criado - ', this.teste)
+  },
+  beforeMount() {
+    console.log('Antes de Montar o template - consumir dados de uma API')
+  },
+  mounted() {
+    console.log('Montado - entrega o HTML no DOM Final')
+  },
+
+  beforeUpdate() {
+    console.log('Antes de atualizar')
+  },
+  updated() {
+    console.log('Atualizado')
+  },
+  beforeUnmount() {
+    console.log('Antes de desmontar/destruir')
+  },
+  unmounted() {
+    console.log('Desmontado/destruído')
+  },
+
+  errorCaptured() {
+    console.log('Erro capturado')
+  },
+  renderTracked() {
+    console.log('Re-renderização rastreada')
+  },
+  renderTriggered() {
+    console.log('Re-renderização acionada')
+  },
+  activated() {
+    console.log('Componente é ativado')
+  },
+  deactivated() {
+    console.log('Componente desativado')
+  }
 };
 </script>
  
