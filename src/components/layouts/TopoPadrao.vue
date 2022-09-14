@@ -35,8 +35,10 @@ export default {
   methods: {
     navegarPara() {
       // console.log("Chegamos aqui")
-      this.$emit("nomeDoEventoCapturadoNoComponentePai", {
-        msg: "Dando um oi para o componente Pai",
+      this.$emit("nomeDoEventoCapturadoNoComponentePai", (p1, p2) => {
+        console.log("Função de callback emitida pelo componente filho");
+        console.log("P1: ", p1);
+        console.log("P2", p2);
       });
     },
   },
