@@ -4,7 +4,7 @@
     <button @click="desmontarComponente()">
       Desmontar componente conteudo
     </button>
-    <Topo />
+    <Topo @nomeDoEventoCapturadoNoComponentePai="acao($event)" />
     <Conteudo v-if="visibilidade" />
   </div>
 </template>
@@ -25,6 +25,9 @@ export default {
   methods: {
     desmontarComponente() {
       this.visibilidade = false;
+    },
+    acao(e) {
+      console.log("Componente pai", e);
     },
   },
 };
