@@ -99,6 +99,7 @@ export default {
       });
 
       localStorage.setItem("vagas", JSON.stringify(vagas));
+      this.emitter.emit("alerta");
 
       this.resetaFormularioCadastroVaga();
     },
