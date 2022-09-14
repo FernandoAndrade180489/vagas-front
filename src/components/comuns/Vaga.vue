@@ -6,8 +6,8 @@
     </div>
     <div class="card-footer">
       <small class="text-muted">
-        Salário: {{ salario }} | Modalidade: {{ modalidade }} | Tipo:
-        {{ tipo }} | Publicação: {{ publicacao }}</small
+        Salário: {{ salario }} | Modalidade: {{ getModalidade }} | Tipo:
+        {{ getTipo }} | Publicação: {{ publicacao }}</small
       >
     </div>
   </div>
@@ -51,14 +51,26 @@ export default {
       required: true,
     },
   },
-  //   created() {
-  //     console.log("titulo", typeof this.titulo);
-  //     console.log("descricaoVaga", typeof this.descricaoVaga);
-  //     console.log("salario", typeof this.salario);
-  //     console.log("modalidade", typeof this.modalidade);
-  //     console.log("tipo", typeof this.tipo);
-  //     console.log("publicacao", typeof this.publicacao);
-  //   },
+  computed: {
+    getModalidade() {
+      switch (this.modalidade) {
+        case "1":
+          return "Home Office";
+        case "2":
+          return "Presencial";
+      }
+      return "";
+    },
+    getTipo() {
+      switch (this.tipo) {
+        case "1":
+          return "CLT";
+        case "2":
+          return "PJ";
+      }
+      return "";
+    },
+  },
 };
 </script>
 
