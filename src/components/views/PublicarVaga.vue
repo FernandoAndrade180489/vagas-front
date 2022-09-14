@@ -84,7 +84,7 @@ export default {
     salvarVaga() {
       let tempoDecorrido = Date.now();
       let dataAtual = new Date(tempoDecorrido);
-      let dataPublicacao = dataAtual.toISOString();
+      let dataPublicacao = dataAtual.toISOString(); // data e hora no time zone UTC
 
       let vagas = JSON.parse(localStorage.getItem("vagas"));
       // console.log(vagas);
