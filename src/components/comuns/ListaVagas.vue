@@ -13,8 +13,19 @@ import Vaga from "./Vaga.vue";
 export default {
   name: "ListaVagas",
   components: { Vaga },
-  props: {
-    vagas: Array,
+  data: () => ({
+    vagas: [],
+  }),
+  activated() {
+    this.vagas = JSON.parse(localStorage.getItem("vagas"));
+  },
+  mounted() {
+    this.emitter.on("filtrarVagas", (vaga) => {
+      const vagas = JSON.parse(localStorage.getItem("vagas"));
+      this.vagas = vagas.filter((item) =>
+        item.titulo.toLowerCase().includes(vaga.titulo.toLowerCase())
+      );
+    });
   },
 };
 </script>

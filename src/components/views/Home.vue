@@ -6,7 +6,7 @@
       </div>
     </div>
 
-    <lista-vagas :vagas="vagas" />
+    <lista-vagas />
 
     <div class="row mt-5">
       <indicador
@@ -42,7 +42,6 @@ export default {
   components: { PesquisarVaga, Indicador, ListaVagas },
   data: () => ({
     usuariosOnline: 0,
-    vagas: [],
   }),
   methods: {
     getUsuariosOnline() {
@@ -52,17 +51,7 @@ export default {
   created() {
     setInterval(this.getUsuariosOnline, 1000); // a cada 1 segundo
   },
-  activated() {
-    this.vagas = JSON.parse(localStorage.getItem("vagas"));
-  },
-  mounted() {
-    this.emitter.on("filtrarVagas", (vaga) => {
-      const vagas = JSON.parse(localStorage.getItem("vagas"));
-      this.vagas = vagas.filter((item) =>
-        item.titulo.toLowerCase().includes(vaga.titulo.toLowerCase())
-      );
-    });
-  },
+  
 };
 </script>
    
