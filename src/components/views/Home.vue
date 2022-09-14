@@ -7,22 +7,11 @@
     </div>
 
     <div class="row mt-5">
-      
-      <indicador />
+      <indicador titulo="Vagas abertas" indicador="100" />
 
-      <div class="col-4">
-        <div class="h-100 p-5 rounded-3 border bg-dark text-white">
-          <p>Profissionais Cadastrados</p>
-          <h2>125</h2>
-        </div>
-      </div>
+      <indicador titulo="Profissionais Cadastrados" indicador="225" />
 
-      <div class="col-4">
-        <div class="h-100 p-5 rounded-3 border bg-light text-dark">
-          <p>Visitantes online</p>
-          <h2>15</h2>
-        </div>
-      </div>
+      <indicador titulo="Visitantes online" indicador="15" />
     </div>
   </div>
 </template>
