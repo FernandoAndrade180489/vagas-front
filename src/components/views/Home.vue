@@ -7,11 +7,27 @@
     </div>
 
     <div class="row mt-5">
-      <indicador titulo="Vagas abertas" indicador="100" bg="bg-dark" color="text-white"/>
+      <indicador
+        titulo="Vagas abertas"
+        indicador="100"
+        bg="bg-dark"
+        color="text-white"
+      />
 
-      <indicador titulo="Profissionais Cadastrados" indicador="225" bg="bg-dark" color="text-white"/>
+      <indicador
+        titulo="Profissionais Cadastrados"
+        indicador="225"
+        bg="bg-dark"
+        color="text-white"
+      />
 
-      <indicador titulo="Visitantes online" indicador="15" bg="bg-light" color="text-dark"/>
+      <indicador
+        titulo="Visitantes online"
+        :indicador="usuariosOnline"
+        bg="bg-light"
+        color="text-dark"
+      />
+      {{ usuariosOnline }}
     </div>
   </div>
 </template>
@@ -21,22 +37,18 @@ import PesquisarVaga from "../comuns/PesquisarVaga.vue";
 import Indicador from "../comuns/Indicador.vue";
 export default {
   name: "Home",
-  created() {
-    console.log("Criado - ", this.teste);
-  },
-  activated() {
-    console.log("Componente é ativado");
-  },
-  deactivated() {
-    console.log("Componente desativado");
-  },
-  beforeUnmount() {
-    console.log("Antes de desmontar/destruir");
-  },
-  unmounted() {
-    console.log("Desmontado/destruído");
-  },
   components: { PesquisarVaga, Indicador },
+  data: () => ({
+    usuariosOnline: 0,
+  }),
+  methods: {
+    getUsuariosOnline() {
+      this.usuariosOnline = Math.floor(Math.random() * 101); // entre 0 e 100
+    },
+  },
+  created() {
+    setInterval(this.getUsuariosOnline, 1000); // a cada 1 segundo
+  },
 };
 </script>
    
