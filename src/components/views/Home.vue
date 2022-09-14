@@ -56,9 +56,16 @@ export default {
   created() {
     setInterval(this.getUsuariosOnline, 1000); // a cada 1 segundo
   },
-  //mounted() { Necessário usar o activated por conta do KeepAlive que evita a renderização
   activated() {
     this.vagas = JSON.parse(localStorage.getItem("vagas"));
+  },
+  mounted() {
+    this.emitter.on("filtrarVagas", (vaga) => {
+      const vagas = JSON.parse(localStorage.getItem("vagas"));
+      this.vagas = vagas.filter((item) =>
+        item.titulo.toLowerCase().includes(vaga.titulo.toLowerCase())
+      );
+    });
   },
 };
 </script>
