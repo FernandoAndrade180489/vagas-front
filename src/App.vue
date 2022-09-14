@@ -4,7 +4,7 @@
     <Topo @navegar="componente = $event" />
     <alerta v-if="exibirAlerta">
       <template v-slot:titulo><h5>Titulo do alerta</h5></template>
-      <template v-slot:descricao><p>Descrição do alerta</p></template>
+      <p>Descrição do alerta</p>
     </alerta>
     <conteudo v-if="visibilidade" :conteudo="componente" />
   </div>
