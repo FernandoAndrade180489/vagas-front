@@ -16,7 +16,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#" @click="navegarPara()">Home</a>
+            <a class="nav-link" href="#" @click="funcaoCallback('Teste 1', 200)">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" @click="navegarPara()"
@@ -32,16 +32,19 @@
   <script>
 export default {
   name: "TopoPadrao",
-  methods: {
-    navegarPara() {
-      // console.log("Chegamos aqui")
-      this.$emit("nomeDoEventoCapturadoNoComponentePai", (p1, p2) => {
-        console.log("Função de callback emitida pelo componente filho");
-        console.log("P1: ", p1);
-        console.log("P2", p2);
-      });
-    },
-  },
+  props: {
+    funcaoCallback: Function,
+  }
+  // methods: {
+  //   navegarPara() {
+  //     // console.log("Chegamos aqui")
+  //     this.$emit("nomeDoEventoCapturadoNoComponentePai", (p1, p2) => {
+  //       console.log("Função de callback emitida pelo componente filho");
+  //       console.log("P1: ", p1);
+  //       console.log("P2: ", p2);
+  //     });
+  //   },
+  // },
 };
 </script>
   

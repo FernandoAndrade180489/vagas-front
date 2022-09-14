@@ -4,7 +4,7 @@
     <button @click="desmontarComponente()">
       Desmontar componente conteudo
     </button>
-    <Topo @nomeDoEventoCapturadoNoComponentePai="$event('Texto 1', 125)" />
+    <Topo :funcaoCallback="acao" />
     <Conteudo v-if="visibilidade" />
   </div>
 </template>
@@ -26,8 +26,12 @@ export default {
     desmontarComponente() {
       this.visibilidade = false;
     },
-    acao(e) {
-      console.log("Componente pai", e);
+    acao(p1, p2) {
+      console.log(
+        "Função de callback definida no componente Pai e chamada no componente Filho"
+      );
+      console.log("P1: ", p1);
+      console.log("P2: ", p2);
     },
   },
 };
