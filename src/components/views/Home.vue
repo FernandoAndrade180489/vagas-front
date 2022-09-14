@@ -7,11 +7,25 @@
 <script>
 export default {
   name: "Home",
+  created() {
+    console.log("Criado - ", this.teste);
+  },
+  activated() {
+    console.log("Componente é ativado");
+  },
+  deactivated() {
+    console.log("Componente desativado");
+  },
+  beforeUnmount() {
+    console.log("Antes de desmontar/destruir");
+  },
+  unmounted() {
+    console.log("Desmontado/destruído");
+  },
 };
 </script>
    
     
 <style scoped>
- 
 </style>
     
