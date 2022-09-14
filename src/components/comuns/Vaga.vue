@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header bg-dark text-white">{{ titulo }}</div>
     <div class="card-body">
-      <p>{{ descricaoVaga }}</p>
+      <p>{{ descricao }}</p>
     </div>
     <div class="card-footer">
       <small class="text-muted">
@@ -27,7 +27,7 @@ export default {
         return true; //se estiver valido
       },
     },
-    descricaoVaga: {
+    descricao: {
       type: String,
       // default: 'O contratante não adicionou uma descrição para essa vaga'
       default() {
