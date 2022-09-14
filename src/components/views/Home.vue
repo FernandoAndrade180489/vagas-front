@@ -7,12 +7,8 @@
     </div>
 
     <div class="row mt-5">
-      <div class="col-4">
-        <div class="h-100 p-5 rounded-3 border bg-dark text-white">
-          <p>Vagas abertas</p>
-          <h2>25</h2>
-        </div>
-      </div>
+      
+      <indicador />
 
       <div class="col-4">
         <div class="h-100 p-5 rounded-3 border bg-dark text-white">
@@ -33,6 +29,7 @@
     
 <script>
 import PesquisarVaga from "../comuns/PesquisarVaga.vue";
+import Indicador from "../comuns/Indicador.vue";
 export default {
   name: "Home",
   created() {
@@ -50,7 +47,7 @@ export default {
   unmounted() {
     console.log("Desmontado/destruído");
   },
-  components: { PesquisarVaga },
+  components: { PesquisarVaga, Indicador },
 };
 </script>
    
