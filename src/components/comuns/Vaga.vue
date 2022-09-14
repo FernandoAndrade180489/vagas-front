@@ -1,6 +1,18 @@
 <template>
   <div class="card">
-    <div class="card-header bg-dark text-white">{{ titulo }}</div>
+    <div class="card-header bg-dark text-white">
+      <div class="row">
+        <div class="col d-flex justify-content-between">
+          <div>{{ titulo }}</div>
+          <div>
+            <div class="form-check form-switch">
+              <input type="checkbox" class="form-check-input" />
+              <label class="form-check-label">Favoritar</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="card-body">
       <p>{{ descricao }}</p>
     </div>
@@ -71,10 +83,10 @@ export default {
       return "";
     },
     getPublicacao() {
-      let dataPublicacao = new Date(this.publicacao)
+      let dataPublicacao = new Date(this.publicacao);
       // return dataPublicacao.toLocaleString('pt-BR')
-      return dataPublicacao.toLocaleDateString('pt-BR')
-    }
+      return dataPublicacao.toLocaleDateString("pt-BR");
+    },
   },
 };
 </script>
