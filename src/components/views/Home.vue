@@ -6,6 +6,18 @@
       </div>
     </div>
 
+    <h2>Template customizado</h2>
+    <lista-vagas v-slot:default="slotProps">
+      <div v-for="(vaga, index) in slotProps.vagas" :key="index">
+        <h4>{{ vaga.titulo }}</h4>
+        <p>{{ vaga.descricao }}</p>
+        <hr />
+      </div>
+    </lista-vagas>
+
+    <br />
+    <br />
+    <h2>Template padrão</h2>
     <lista-vagas />
 
     <div class="row mt-5">
@@ -51,7 +63,6 @@ export default {
   created() {
     setInterval(this.getUsuariosOnline, 1000); // a cada 1 segundo
   },
-  
 };
 </script>
    
