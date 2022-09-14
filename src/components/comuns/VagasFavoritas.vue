@@ -37,6 +37,11 @@
 <script>
 export default {
   name: "VagasFavoritas",
+  mounted() {
+    this.emitter.on("eventoGlobal1", (e) => {
+      console.log("Componente VagasFavoritas: ", e);
+    });
+  },
 };
 </script>
 
