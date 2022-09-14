@@ -10,7 +10,7 @@
       <div class="col">
         <vaga
           :titulo="vaga.titulo"
-          :descricao="vaga.descricao"
+          :descricao-vaga="vaga.descricao"
           :salario="vaga.salario"
           :modalidade="vaga.modalidade"
           :tipo="vaga.tipo"
