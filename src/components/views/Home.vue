@@ -7,11 +7,11 @@
     </div>
 
     <div class="row mt-5">
-      <indicador titulo="Vagas abertas" indicador="100" />
+      <indicador titulo="Vagas abertas" indicador="100" bg="bg-dark" color="text-white"/>
 
-      <indicador titulo="Profissionais Cadastrados" indicador="225" />
+      <indicador titulo="Profissionais Cadastrados" indicador="225" bg="bg-dark" color="text-white"/>
 
-      <indicador titulo="Visitantes online" indicador="15" />
+      <indicador titulo="Visitantes online" indicador="15" bg="bg-light" color="text-dark"/>
     </div>
   </div>
 </template>
