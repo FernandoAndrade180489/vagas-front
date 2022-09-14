@@ -101,6 +101,7 @@ export default {
       if (this.validaFormulario()) {
         localStorage.setItem("vagas", JSON.stringify(vagas));
         this.emitter.emit("alerta", {
+          tipo: "sucesso",
           titulo: `A vaga  ${this.titulo} foi cadastrada com sucesso!`,
           descricao:
             "Parabéns! A vaga foi cadastrada e poderá ser consultada por milhares de profissionais em nossa plataforma.",
@@ -109,6 +110,7 @@ export default {
         this.resetaFormularioCadastroVaga();
       } else {
         this.emitter.emit("alerta", {
+          tipo: "erro",
           titulo: "-_- Opsss... Não foi possivel realizar o cadastro!",
           descricao:
             "Parace que você esqueceu de preencher algumas informação, faça o ajuste e envie novamente.",

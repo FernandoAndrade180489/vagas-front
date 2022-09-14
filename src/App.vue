@@ -2,7 +2,7 @@
   <div>
     <vagas-favoritas />
     <Topo @navegar="componente = $event" />
-    <alerta v-if="exibirAlerta">
+    <alerta v-if="exibirAlerta" :tipo="alerta.tipo">
       <template v-slot:titulo
         ><h5>{{ alerta.titulo }}</h5></template
       >
@@ -24,7 +24,7 @@ export default {
     visibilidade: true,
     componente: "Home",
     exibirAlerta: false,
-    alerta: { titulo: "", descricao: "" },
+    alerta: { titulo: "", descricao: "", tipo: "" },
   }),
   components: {
     Conteudo,
@@ -37,7 +37,6 @@ export default {
       this.alerta = a;
       this.exibirAlerta = true;
       setTimeout(() => (this.exibirAlerta = false), 4000);
-      console.log("Apresentar Alerta");
     });
   },
 };
