@@ -7,6 +7,16 @@
     </div>
 
     <div class="row mt-5">
+      <div class="col-6">
+        <vaga />
+      </div>
+
+      <div class="col-6">
+        <vaga />
+      </div>
+    </div>
+
+    <div class="row mt-5">
       <indicador
         titulo="Vagas abertas"
         indicador="100"
@@ -35,9 +45,10 @@
 <script>
 import PesquisarVaga from "../comuns/PesquisarVaga.vue";
 import Indicador from "../comuns/Indicador.vue";
+import Vaga from "../comuns/Vaga.vue";
 export default {
   name: "Home",
-  components: { PesquisarVaga, Indicador },
+  components: { PesquisarVaga, Indicador, Vaga },
   data: () => ({
     usuariosOnline: 0,
   }),
